@@ -14,9 +14,9 @@ const Header = ({ loggedIn }) => {
               onClick={() => {
                 navigate("/");
               }}
-              className="d-inline-flex link-body-emphasis text-decoration-none text-light btn"
+              className="d-inline-flex text-decoration-none text-light btn"
             >
-              Your Company Name
+              Colossus Textile
             </button>
           </div>
           <div className="col-md-6 second-part">
@@ -125,7 +125,6 @@ const Header = ({ loggedIn }) => {
                   Features
                 </NavLink>
               </li>
-              
             </ul>
           </div>
           <div className="col-md-3 text-end third-part">
@@ -228,22 +227,22 @@ const Footer = () => {
             <h5>Quick Links</h5>
             <ul className="list-unstyled ">
               <li>
-                <a className="" href="#">
+                <a className="nav-link" href="#">
                   Home
                 </a>
               </li>
               <li>
-                <a className="" href="#">
+                <a className="nav-link " href="#">
                   Products
                 </a>
               </li>
               <li>
-                <a className="" href="#">
+                <a className="nav-link" href="#">
                   Services
                 </a>
               </li>
               <li>
-                <a className="" href="#">
+                <a className="nav-link" href="#">
                   Contact Us
                 </a>
               </li>
