@@ -1,6 +1,6 @@
 import "../../assets/Style/HomeScreen/home.css";
 import { Link } from "react-router-dom";
-import { NavLink, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 export default function Content() {
   return (
     <div className="home-content">

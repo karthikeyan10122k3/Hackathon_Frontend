@@ -11,6 +11,7 @@ export default function ProductCard({ productInfo }) {
       </Link>
       <div className="card-body">
         <h5 className="card-title ">{productInfo.model}</h5>
+        <button className="btn btn-success btn-block mb-3">Add to Cart</button>
       </div>
     </div>
   );

@@ -40,6 +40,9 @@ export default function FirstOrderComponent() {
   };
 
   return (
+    <>
+     <div className="firstOrder-backgroung-imagee"></div>
+
     <div className="form-container d-flex align-items-center justify-content-center vh-100">
       <div className="form bg-white p-4 rounded border border-primary">
         <header className="mb-4 text-center heading-text">
@@ -73,7 +76,7 @@ export default function FirstOrderComponent() {
               id="colorPicker"
               name="color"
               onChange={handleInputChange}
-            />
+              />
             {errors.color && <div className="text-danger">{errors.color}</div>}
           </div>
 
@@ -89,7 +92,7 @@ export default function FirstOrderComponent() {
               id="quantity"
               name="quantity"
               onChange={handleInputChange}
-            />
+              />
             {errors.quantity && (
               <div className="text-danger">{errors.quantity}</div>
             )}
@@ -107,5 +110,6 @@ export default function FirstOrderComponent() {
         </form>
       </div>
     </div>
+   </>
   );
 }

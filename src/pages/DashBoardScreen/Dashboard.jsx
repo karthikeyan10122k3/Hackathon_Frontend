@@ -11,10 +11,7 @@ export default function Dashboard() {
     <div className='dashboard'>
       <Header loggedIn={loggedIn}/>
       <DashboardContent />
-
       <Footer />
-
-      
     </div>
   )
 }
@@ -23,7 +20,6 @@ function DashboardContent() {
   return (
     <div className='dashboard-content'>
       <Content />
-      
     </div>
   )
 }

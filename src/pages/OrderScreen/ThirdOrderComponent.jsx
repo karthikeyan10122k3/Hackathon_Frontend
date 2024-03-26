@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function ThirdOrderComponent() {
@@ -33,22 +33,12 @@ export default function ThirdOrderComponent() {
 
   const handleSubmit = () => {
     if (validateForm()) {
-      const toastTrigger = document.getElementById('liveToastBtn')
-      const toastLiveExample = document.getElementById('liveToast')
-
-      if (toastTrigger) {
-        const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample)
-        toastTrigger.addEventListener('click', () => {
-          toastBootstrap.show()
-      })
-}
-      setTimeout(() => {
-        navigate("/myOrders");
-      }, 3000);
+      navigate("/myOrders");
     }
   };
-
   return (
+    <>
+    <div className="third-backgroung-image"></div>
     <div className="container d-flex justify-content-center align-items-center vh-100">
       <div
         className="card p-4"
@@ -171,7 +161,6 @@ export default function ThirdOrderComponent() {
 
           <div className="signup-btn text-center">
             <button
-              id="liveToastBtn"
               className="btn btn-primary btn-block mb-3"
               type="button"
               onClick={handleSubmit}
@@ -181,35 +170,7 @@ export default function ThirdOrderComponent() {
           </div>
         </form>
       </div>
-        <div className="toast-container position-fixed bottom-0 end-0 p-3">
-          <div
-            id="liveToast"
-            className="toast"
-            role="alert"
-            aria-live="assertive"
-            aria-atomic="true"
-          >
-            <div className="toast-header">
-              <img
-                src="../../assets/Images/Products/S1.jpg" 
-                className="rounded me-2"
-                alt="..."
-              />
-              <strong className="me-auto">Bootstrap</strong>
-              <small>Just now</small>
-              <button
-                type="button"
-                className="btn-close"
-                data-bs-dismiss="toast"
-                aria-label="Close"
-                onClick={() => setShowToast(false)}
-              ></button>
-            </div>
-            <div className="toast-body">
-              Your form has been submitted successfully!
-            </div>
-          </div>
-        </div>
     </div>
+    </>
   );
 }
