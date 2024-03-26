@@ -1,0 +1,23 @@
+.feature-row {
+  justify-content: center;
+}
+
+.feature-card {
+  background-color: #f8f9fa;
+  border: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.feature-card:hover {
+  transform: translateY(-3px);
+  transition: transform 0.3s ease-in-out;
+}
+
+.feature-card .card-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.feature-card .card-text {
+  font-size: 1rem;
+}

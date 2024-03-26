@@ -7,14 +7,20 @@ const Header = ({ loggedIn }) => {
 
   return (
     <div>
-      <div className="container-fluid text-light top-header">
-        <header className="d-flex flex-wrap align-items-center justify-content-between py-3 mx-4">
+      <div className="container-fluid text-light top-header ">
+        <header className="d-flex flex-wrap align-items-center justify-content-between py-2 mx-4">
           <div className="col-md-3 mb-2 mb-md-0 first-part">
+            <img
+              src="src\assets\Images\HomeScreen\Logo.PNG"
+              alt="logo"
+              height={32}
+              width={32}
+            />
             <button
               onClick={() => {
                 navigate("/");
               }}
-              className="d-inline-flex text-decoration-none text-light btn"
+              className=" d-inline-flex text-decoration-none text-light btn head-text"
             >
               Colossus Textile
             </button>
@@ -40,73 +46,6 @@ const Header = ({ loggedIn }) => {
                   Products
                 </NavLink>
               </li>
-              <li className="nav-item dropdown">
-                <NavLink
-                  to="/services"
-                  activeClassName="active"
-                  className="nav-link dropdown-toggle px-2 btn"
-                >
-                  Services
-                </NavLink>
-                <ul className="dropdown-menu text-center dropdown-menu-end">
-                  <div className="row">
-                    <div className="col">
-                      <li>
-                        <NavLink to="/service1" className="dropdown-item btn">
-                          Service 1
-                        </NavLink>
-                      </li>
-                      <li>
-                        <NavLink to="/service2" className="dropdown-item btn">
-                          Service 2
-                        </NavLink>
-                      </li>
-                      <li>
-                        <NavLink to="/service3" className="dropdown-item btn">
-                          Service 3
-                        </NavLink>
-                      </li>
-                      <li>
-                        <NavLink to="/service4" className="dropdown-item btn">
-                          Service 4
-                        </NavLink>
-                      </li>
-                      <li>
-                        <NavLink to="/service5" className="dropdown-item btn">
-                          Service 5
-                        </NavLink>
-                      </li>
-                    </div>
-                    <div className="col">
-                      <li>
-                        <NavLink to="/service6" className="dropdown-item btn">
-                          Service 6
-                        </NavLink>
-                      </li>
-                      <li>
-                        <NavLink to="/service7" className="dropdown-item btn">
-                          Service 7
-                        </NavLink>
-                      </li>
-                      <li>
-                        <NavLink to="/service8" className="dropdown-item btn">
-                          Service 8
-                        </NavLink>
-                      </li>
-                      <li>
-                        <NavLink to="/service9" className="dropdown-item btn">
-                          Service 9
-                        </NavLink>
-                      </li>
-                      <li>
-                        <NavLink to="/service10" className="dropdown-item btn">
-                          Service 10
-                        </NavLink>
-                      </li>
-                    </div>
-                  </div>
-                </ul>
-              </li>
               <li className="nav-item">
                 <NavLink
                   to="/customer"
@@ -128,7 +67,7 @@ const Header = ({ loggedIn }) => {
             </ul>
           </div>
           <div className="col-md-3 text-end third-part">
-            <div className="d-flex align-items-center">
+            <div className="d-flex align-items-center justify-content-end">
               {loggedIn ? (
                 <>
                   <form
@@ -145,12 +84,12 @@ const Header = ({ loggedIn }) => {
                   <div className="dropdown text-end">
                     <a
                       href="#"
-                      className="d-block link-body-emphasis text-decoration-none dropdown-toggle"
+                      className="d-block link-body-emphasis text-decoration-none dropdown-toggle text-white"
                       data-bs-toggle="dropdown"
                       aria-expanded="false"
                     >
                       <img
-                        src="https://github.com/mdo.png"
+                        src="src\assets\Images\Dashboard\user-icon.png"
                         alt="mdo"
                         width="32"
                         height="32"
@@ -159,27 +98,22 @@ const Header = ({ loggedIn }) => {
                     </a>
                     <ul className="dropdown-menu text-small">
                       <li>
-                        <a className="dropdown-item" href="#">
-                          Profile
-                        </a>
+                        <button onClick={()=>navigate("/profile")} className="dropdown-item">Profile</button>
                       </li>
                       <li>
-                        <a className="dropdown-item" href="#">
-                          Settings
-                        </a>
+                        <button onClick={()=>navigate("/cart")} className="dropdown-item">Cart</button>
                       </li>
                       <li>
-                        <a className="dropdown-item" href="#">
-                          WhiteList
-                        </a>
+                        <button onClick={()=>navigate("/myOrders")} className="dropdown-item">My Orders</button>
+                      </li>
+                      <li>
+                        <button onClick={()=>navigate("/settings")} className="dropdown-item">Settings</button>
                       </li>
                       <li>
                         <hr className="dropdown-divider" />
                       </li>
                       <li>
-                        <a className="dropdown-item" href="#">
-                          Sign out
-                        </a>
+                        <button onClick={()=>navigate("/")} className="dropdown-item">Sign out</button>
                       </li>
                     </ul>
                   </div>
@@ -211,9 +145,11 @@ const Header = ({ loggedIn }) => {
     </div>
   );
 };
+
 const Footer = () => {
+  const navigate = useNavigate();
   return (
-    <footer className=" text-light py-4 footer">
+    <footer className=" text-light py-4 footer ">
       <div className="container">
         <div className="row">
           <div className="col-md-4">
@@ -227,24 +163,16 @@ const Footer = () => {
             <h5>Quick Links</h5>
             <ul className="list-unstyled ">
               <li>
-                <a className="nav-link" href="#">
-                  Home
-                </a>
+                <button onClick={()=>navigate("/")} className="nav-link">Home</button>
               </li>
               <li>
-                <a className="nav-link " href="#">
-                  Products
-                </a>
+                <button onClick={()=>navigate("/products")} className="nav-link ">Products</button>
               </li>
               <li>
-                <a className="nav-link" href="#">
-                  Services
-                </a>
+                <button onClick={()=>navigate("/customer")} className="nav-link">Customer Testimonials</button>
               </li>
               <li>
-                <a className="nav-link" href="#">
-                  Contact Us
-                </a>
+                <button onClick={()=>navigate("/contact")} className="nav-link">Contact Us</button>
               </li>
             </ul>
           </div>

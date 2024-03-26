@@ -1,0 +1,13 @@
+.card-image{
+  display: grid;
+  grid-template-columns:repeat(4,1fr);
+  gap: 20px;
+  margin-left: 24px;
+  
+}
+.card-image-individual{
+  height: 22rem;
+}
+.card-image-individual img{
+  height: 100%;
+}

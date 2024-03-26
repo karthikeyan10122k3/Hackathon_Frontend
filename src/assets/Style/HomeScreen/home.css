@@ -6,3 +6,15 @@
   background-position: center;
   background-repeat: no-repeat;
 }
+
+.carousel-text-header{
+  color: rgb(255, 0, 0);
+  font-weight: bolder;
+}
+.carousel-text-paragraph{
+  color: white;
+  font-weight: 900;
+}
+.carousel-img{
+  filter: blur(2px);
+}

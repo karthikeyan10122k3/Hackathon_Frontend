@@ -8,13 +8,17 @@ export default function Register() {
   const registerPage = location.state && location.state.register;
   const [showRegister, setShowRegister] = useState(registerPage);
   return (
-    <div className="container-fluid  bg-gradient">
+    <div className="container-fluid bg-gradient">
       <div className="row justify-content-center align-items-center vh-100">
         <div className="col-md-6">
-          {showRegister === "login" ? (
-            <LoginFromComponent setShowRegister={setShowRegister} />
-          ) : (
+          {showRegister === "signup" && (
             <SignupFormComponent setShowRegister={setShowRegister} />
+          )}
+          {showRegister === "otp" && (
+            <OTPPage setShowRegister={setShowRegister} />
+          )}
+          {showRegister === "login" && (
+            <LoginFromComponent setShowRegister={setShowRegister} />
           )}
         </div>
       </div>
@@ -58,7 +62,7 @@ function LoginFromComponent({ setShowRegister }) {
 
   return (
     <div className="login form bg-white p-4 rounded border border-primary text-center">
-      <header className="mb-4">Login</header>
+      <header className="mb-4 heading-text">Login</header>
       <form>
         <input
           type="text"
@@ -160,14 +164,14 @@ function SignupFormComponent({ setShowRegister }) {
 
   const handleSubmit = () => {
     if (validateForm()) {
-      setShowRegister("login");
+      setShowRegister("otp");
       console.log("Signup form submitted:", signupInfo);
     }
   };
 
   return (
     <div className="registration form bg-white p-4 rounded border border-primary ">
-      <header className="mb-4 text-center">Signup</header>
+      <header className="mb-4 text-center heading-text">Signup</header>
       <form>
         <input
           type="text"
@@ -242,6 +246,52 @@ function SignupFormComponent({ setShowRegister }) {
             Login
           </button>
         </p>
+      </div>
+    </div>
+  );
+}
+
+function OTPPage({ setShowRegister }) {
+  const [otp, setOTP] = useState("");
+  const [error, setError] = useState("");
+
+  const handleInputChange = (e) => {
+    const { value } = e.target;
+    setOTP(value);
+  };
+
+  const handleSubmit = () => {
+      if (otp.length !== 6 ) {
+      setError("Please enter a valid 6-digit OTP number.");
+      return;
+    }
+    setShowRegister("login");
+  };
+
+  return (
+    <div className="registration form bg-white p-4 rounded border border-primary ">
+      <h2 className="text-center mb-4">Enter OTP</h2>
+      <p className="text-center text-muted mb-4">
+        An OTP has been sent to your Email u Entered.
+      </p>
+      <div className="mb-3">
+        <input
+          type="text" 
+          className="form-control"
+          placeholder="Enter 6-digit OTP"
+          value={otp}
+          onChange={handleInputChange}
+        />
+        {error && <div className="text-danger mt-1">{error}</div>}
+      </div>
+      <div className="text-center">
+        <button
+          className="btn btn-primary"
+          type="button"
+          onClick={handleSubmit}
+        >
+          Submit
+        </button>
       </div>
     </div>
   );
