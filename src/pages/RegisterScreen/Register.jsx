@@ -57,7 +57,7 @@ function LoginFromComponent({ setShowRegister }) {
 
   const handleSubmit = () => {
     if (validateForm()) {
-      navigate("/dashboard", { state: { loggedIn: true } });
+      navigate("/products", { state: { loggedIn: true } });
       console.log("Login form submitted:", loginInfo);
     }
   };
