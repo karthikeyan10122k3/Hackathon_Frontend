@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 import "../../assets/Style/RegisterScreen/register.css";
 
 export default function Register() {
+  
   const location = useLocation();
   const registerPage = location.state && location.state.register;
   const [showRegister, setShowRegister] = useState(registerPage);
@@ -162,10 +164,37 @@ function SignupFormComponent({ setShowRegister }) {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (validateForm()) {
-      setShowRegister("otp");
-      console.log("Signup form submitted:", signupInfo);
+
+      try {
+        await axios.post(
+          "https://retail-backend-2og1.onrender.com/users/sendOtp",
+          {
+            userName: signupInfo.username,
+            email: signupInfo.email,
+            mobileNumber: signupInfo.mobileNumber,
+            password: signupInfo.password,
+          },  {
+            headers: {
+              'Content-Type': 'application/x-www-form-urlencoded'
+            }
+        }
+        );
+        console.log("signup complete ,off to Otp page");
+        setShowRegister("otp");
+      } catch (error) {
+        console.error("Error adding User:", error);
+        if (error.response) {
+          console.log(error.response.data);
+          console.log(error.response.status);
+          console.log(error.response.headers);
+        } else if (error.request) {
+          console.log(error.request);
+        } else {
+          console.log("Error", error.message);
+        }
+      }
     }
   };
 
@@ -261,11 +290,7 @@ function OTPPage({ setShowRegister }) {
   };
 
   const handleSubmit = () => {
-      if (otp.length !== 6 ) {
-      setError("Please enter a valid 6-digit OTP number.");
-      return;
-    }
-    setShowRegister("login");
+      setShowRegister("login");
   };
 
   return (
@@ -276,7 +301,7 @@ function OTPPage({ setShowRegister }) {
       </p>
       <div className="mb-3">
         <input
-          type="text" 
+          type="text"
           className="form-control"
           placeholder="Enter 6-digit OTP"
           value={otp}

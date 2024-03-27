@@ -14,44 +14,46 @@ export default function Content() {
 function HeroSectionComponent() {
   const navigate = useNavigate();
   return (
-    <div className="container py-5 vh-100 d-flex align-items-center">
-      <div className="row align-items-center">
-        <div className="col-lg-6 ">
-          <h3 className="display-5 fw-bold text-body-emphasis lh-1 mb-15">
-            Discover Colossus Textile
-          </h3>
-          <p className="lead">
-            Colossus Textile, we are more than just a fabric company – we are
-            purveyors of fine craftsmanship and impeccable style. With a legacy
-            of excellence spanning decades, we blend tradition with innovation
-            to deliver textiles that inspire and enchant.
-          </p>
-          <div className="d-grid gap-2 d-md-flex justify-content-md-start">
-            <button
-              onClick={() => navigate("/register")}
-              type="button"
-              className="btn btn-primary btn-lg px-4 me-md-2"
-            >
-              Get Strated
-            </button>
-            <button
-              onClick={() => navigate("/products")}
-              type="button"
-              className="btn btn-outline-secondary btn-lg px-4"
-            >
-              View Products
-            </button>
+    <div className="hero-section">
+      <div className="container py-5 vh-100 d-flex align-items-center ">
+        <div className="row align-items-center">
+          <div className="col-lg-6 ">
+            <h3 className="display-5 fw-bold text-body-emphasis lh-1 mb-15">
+              Discover Colossus Textile
+            </h3>
+            <p className="lead">
+              Colossus Textile, we are more than just a fabric company – we are
+              purveyors of fine craftsmanship and impeccable style. With a
+              legacy of excellence spanning decades, we blend tradition with
+              innovation to deliver textiles that inspire and enchant.
+            </p>
+            <div className="d-grid gap-2 d-md-flex justify-content-md-start">
+              <button
+                onClick={() => navigate("/register")}
+                type="button"
+                className="btn btn-primary btn-lg px-4 me-md-2"
+              >
+                Get Strated
+              </button>
+              <button
+                onClick={() => navigate("/products")}
+                type="button"
+                className="btn btn-outline-secondary btn-lg px-4"
+              >
+                View Products
+              </button>
+            </div>
           </div>
-        </div>
-        <div className="col-lg-6">
-          <img
-            src="src\assets\Images\HomeScreen\main.avif"
-            className="d-block mx-lg-auto img-fluid"
-            alt="Hero Image"
-            width="700"
-            height="500"
-            loading="lazy"
-          />
+          <div className="col-lg-6">
+            <img
+              src="src\assets\Images\HomeScreen\main.avif"
+              className="d-block mx-lg-auto img-fluid"
+              alt="Hero Image"
+              width="700"
+              height="500"
+              loading="lazy"
+            />
+          </div>
         </div>
       </div>
     </div>

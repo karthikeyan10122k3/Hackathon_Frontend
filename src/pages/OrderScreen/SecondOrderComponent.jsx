@@ -30,6 +30,7 @@ export default function SecondOrderComponent() {
 
   const handleSubmit = () => {
     if (validateForm()) {
+      localStorage.setItem('secondOrderInfo', JSON.stringify(secondOrderInfo));
       navigate("/third-order");
     }
   };

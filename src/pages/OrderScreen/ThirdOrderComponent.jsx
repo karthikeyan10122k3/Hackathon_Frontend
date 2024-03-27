@@ -33,7 +33,9 @@ export default function ThirdOrderComponent() {
 
   const handleSubmit = () => {
     if (validateForm()) {
-      navigate("/myOrders");
+      localStorage.setItem('thirdOrderInfo', JSON.stringify(thirdOrderInfo));
+      
+      navigate("/order-confirmation");
     }
   };
   return (
