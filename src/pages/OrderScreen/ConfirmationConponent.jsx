@@ -9,7 +9,7 @@ export default function ConfirmationComponent() {
   useEffect(() => {
     const firstOrderInfo = localStorage.getItem("firstOrderInfo");
     const secondOrderInfo = localStorage.getItem("secondOrderInfo");
-    const thirdOrderInfo = localStorage.getItem("thirdOrderInfo");
+    const thirdOrderInfo = localStorage.getItem("thirdOrderInfo" );
     const storedData = firstOrderInfo + secondOrderInfo + thirdOrderInfo
     if (storedData) {
       const hash = SHA256(storedData).toString();
