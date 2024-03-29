@@ -1,8 +1,6 @@
-# React + Vite
+# National-Level Hackathon Project - Textile Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project was developed as part of a national-level hackathon hosted at Sri Kalasalingam University. Our team created a textile website aimed at facilitating textile purchases integrated with Blockchain, allowing users to select manufacturers for their textiles.
 
-Currently, two official plugins are available:
+I was responsible for developing the frontend of the website.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
